@@ -38,7 +38,7 @@ The easiest way to get the correct file format for this fake node data is to
 dump a node from a real Chef Server with the following command, then edit
 the values as needed:
 
-    knife node show <node_name> -F json > node.json
+    knife node show <node_name> -l -F json > node.json
 
 ## Prerequisites
 
