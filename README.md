@@ -13,7 +13,7 @@ To shut down the test VM and release all resources:
 
     kitchen destroy
 
-Node data is contained in +.json+ files in the +nodes/+ subdirectory of this
+Node data is contained in `.json` files in the `test/nodes/` subdirectory of this
 cookbook.  Example:
 
     {
@@ -28,11 +28,13 @@ cookbook.  Example:
       }
     }
 
-In order to tell Test Kitchen to use the fake node data, make sure you're using the +chef_zero+ provisioner and pass Chef Zero a +nodes_path:+ as part of a provisioner stanza.  The +nodes_path:+ is a relative path containing node +.json+ files.  You must use the +.json+ format for test data.  Test Kitchen does not recognize files in the Chef DSL format.
+In order to tell Test Kitchen to use the fake node data, use the `chef_zero` provisioner and pass Chef Zero a `nodes_path:` as part of a provisioner stanza.
 
     provisioner:
       name: chef_zero
-      nodes_path: nodes
+      nodes_path: test/nodes
+  
+The `nodes_path:` is a relative path containing node `.json` files.  You must use the `.json` format for test data.  Chef Zero does not currently recognize files in the Chef DSL format.
   
 The easiest way to get the correct file format for this fake node data is to
 dump a node from a real Chef Server with the following command, then edit
