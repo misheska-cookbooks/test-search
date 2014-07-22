@@ -44,7 +44,7 @@ the values as needed:
 
 Clone this repository:
 
-    git clone https://github.com/misheska-cookbooks/demo-mcollective
+    git clone https://github.com/misheska-cookbooks/test-search
 
 Install the [Chef Development Kit](http://www.getchef.com/downloads/chef-dk) for your platform.
 
