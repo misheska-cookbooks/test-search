@@ -28,6 +28,12 @@ cookbook.  Example:
       }
     }
 
+In order to tell Test Kitchen to use the fake node data, make sure you're using the +chef_zero+ provisioner and pass Chef Zero a +nodes_path:+ as part of a provisioner stanza.  The +nodes_path:+ is a relative path containing node +.json+ files.  You must use the +.json+ format for test data.  Test Kitchen does not recognize files in the Chef DSL format.
+
+    provisioner:
+      name: chef_zero
+      nodes_path: nodes
+  
 The easiest way to get the correct file format for this fake node data is to
 dump a node from a real Chef Server with the following command, then edit
 the values as needed:
